@@ -1108,6 +1108,18 @@ button {
 /* ---- responsive: single column below 720 ---- */
 
 @media (max-width: 720px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .hero__panel {
+    height: auto;
+    min-height: calc(100vh - (var(--panel-inset) * 2));
+    min-height: calc(100svh - (var(--panel-inset) * 2));
+  }
+
   .hero__topbar {
     grid-template-columns: 1fr;
     justify-items: center;
