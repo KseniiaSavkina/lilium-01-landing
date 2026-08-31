@@ -1,0 +1,65 @@
+/* LILIUM 01 — design tokens
+   Extracted from the finished Figma frame. Do not invent values outside this file. */
+
+:root {
+  /* ---- colour: two values, everything else is opacity ---- */
+  --ink:            #0C0C0C;   /* page ground, and text on light blocks */
+  --bloom:          #F5D0E6;   /* the only colour: text, borders, accents, footer ground */
+  --surface:        #1A1819;   /* ink + bloom 6% — cards, inputs */
+
+  --bloom-100:      rgba(245, 208, 230, 1);     /* display, filled buttons, inverted blocks */
+  --bloom-76:       rgba(245, 208, 230, .76);   /* labels, eyebrows, footer headings */
+  --bloom-66:       rgba(245, 208, 230, .66);   /* body copy — the contrast floor, 5.34:1 */
+  --bloom-46:       rgba(245, 208, 230, .46);   /* secondary, captions */
+  --bloom-18:       rgba(245, 208, 230, .18);   /* hairlines, input borders */
+  --bloom-12:       rgba(245, 208, 230, .12);   /* active segment fill */
+  --bloom-10:       rgba(245, 208, 230, .10);   /* card borders, soft dividers */
+
+  --ink-100:        rgba(12, 12, 12, 1);        /* on the footer and the accent card */
+  --ink-66:         rgba(12, 12, 12, .66);
+  --ink-45:         rgba(12, 12, 12, .45);
+  --ink-16:         rgba(12, 12, 12, .16);
+
+  /* ---- type ---- */
+  --font-display:   'Instrument Serif', Georgia, serif;   /* hero wordmark only */
+  --font-heading:   'Inter', system-ui, sans-serif;       /* headings only */
+  --font-text:      'Geist Mono', ui-monospace, monospace;/* everything else */
+
+  /* headings — Inter, 120% leading, zero tracking */
+  --h1:             60px;
+  --h2:             44px;
+  --h3:             40px;   /* spec figures */
+  --h4:             28px;   /* footer wordmark */
+  --h5:             22px;   /* manifesto statement */
+  --h6:             20px;   /* hero wordmark in the nav */
+  --heading-leading: 1.2;
+
+  /* everything else — one style, no exceptions */
+  --text-size:      14px;
+  --text-leading:   20px;
+  --text-case:      uppercase;
+  --text-tracking:  0;
+
+  /* hero wordmark */
+  --wordmark-size:  220px;
+  --wordmark-leading: 172px;
+  --wordmark-tracking: -4.8px;
+
+  /* ---- radius ladder ---- */
+  --r-control:      4px;    /* buttons, segments, badges, checkbox, icon box */
+  --r-field:        8px;    /* inputs, media inside cards */
+  --r-card:         12px;   /* cards, hero thumbnail */
+  --r-panel:        20px;   /* hero panel */
+
+  /* ---- layout ---- */
+  --page:           1440px;
+  --content:        1240px;
+  --gutter:         100px;
+  --panel-inset:    12px;
+
+  --control-h:      48px;   /* buttons and inputs share one height */
+  --segment-h:      44px;
+  --icon-box:       36px;
+  --badge:          36px;
+  --hairline:       1px;
+}

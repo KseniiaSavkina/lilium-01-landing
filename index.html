@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LILIUM 01 — Wearable audio armor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&family=Inter:wght@300;400;600&family=Instrument+Serif&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="lilium-tokens.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="hero" id="hero">
+  <div class="hero__panel">
+    <video class="hero__kv" src="assets/kv.mp4" poster="assets/kv.jpg" autoplay muted loop playsinline></video>
+    <div class="hero__scrim hero__scrim--top" aria-hidden="true"></div>
+    <div class="hero__scrim hero__scrim--bottom" aria-hidden="true"></div>
+
+    <div class="hero__topbar">
+      <span class="hero__wordmark-nav">LILIUM®</span>
+
+      <nav class="segmented" aria-label="Primary">
+        <a class="segmented__item is-active" href="#hero">Home</a>
+        <span class="segmented__divider" aria-hidden="true"></span>
+        <a class="segmented__item" href="#manifesto">Manifesto</a>
+        <span class="segmented__divider" aria-hidden="true"></span>
+        <a class="segmented__item" href="#features">Features</a>
+        <span class="segmented__divider" aria-hidden="true"></span>
+        <a class="segmented__item" href="#preorder">Preorder</a>
+      </nav>
+
+      <a class="btn" href="#preorder">
+        <span class="btn__label">Reserve yours</span>
+        <span class="btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none">
+            <path d="M4 9H14" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M10 5L14 9L10 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="hero__hairline" aria-hidden="true"></div>
+
+    <div class="hero__body">
+      <p class="hero__lede">Glass around the&nbsp;ear, chrome around the&nbsp;glass. Over-ear headphones built like an&nbsp;object, not&nbsp;a&nbsp;gadget.</p>
+      <ul class="hero__list">
+        <li>Material</li>
+        <li>Form</li>
+        <li>Anatomy</li>
+        <li>Sound</li>
+      </ul>
+    </div>
+
+    <div class="hero__foot">
+      <p class="hero__wordmark">Lilium<span class="hero__wordmark-sup">01</span></p>
+
+      <div class="hero__preview">
+        <div class="hero__thumb">
+          <img src="assets/thumb.jpg" alt="" />
+        </div>
+        <div class="hero__segments" aria-hidden="true">
+          <span class="is-active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="manifesto" id="manifesto">
+  <div class="manifesto__row">
+    <div class="manifesto__copy">
+      <h2 class="manifesto__heading">Manifesto</h2>
+      <p class="manifesto__statement">Glass is&nbsp;softness. Chrome is&nbsp;protection.</p>
+      <p class="manifesto__text">LILIUM 01 is&nbsp;not&nbsp;a&nbsp;gadget wearing a&nbsp;decorative shell. The&nbsp;glass carries the&nbsp;sound, the&nbsp;chrome carries the&nbsp;load, and&nbsp;the&nbsp;two are locked into one another — the&nbsp;way armour is&nbsp;built around something worth keeping.</p>
+      <a class="manifesto__link" href="#features">More</a>
+    </div>
+
+    <div class="manifesto__stats">
+      <div class="stat">
+        <p class="stat__value">40 mm</p>
+        <p class="stat__label">Driver</p>
+      </div>
+      <div class="stat">
+        <p class="stat__value">280 g</p>
+        <p class="stat__label">Weight</p>
+      </div>
+      <div class="stat">
+        <p class="stat__value">60 h</p>
+        <p class="stat__label">Battery</p>
+      </div>
+    </div>
+
+    <img class="manifesto__fragment manifesto__fragment--small" src="assets/fragment-small.png" alt="" aria-hidden="true" />
+    <img class="manifesto__fragment manifesto__fragment--large" src="assets/fragment-large.png" alt="" />
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="features__head">
+    <div class="features__copy">
+      <h2 class="features__heading">Features</h2>
+      <p class="features__text">Four things that make LILIUM 01 what it&nbsp;is — the&nbsp;material it&nbsp;is cut from, the&nbsp;shape it&nbsp;holds, the&nbsp;way it&nbsp;sits, and&nbsp;the&nbsp;chamber the&nbsp;sound lives in.</p>
+    </div>
+    <a class="btn" href="#preorder">
+      <span class="btn__label">Full specs</span>
+      <span class="btn__icon" aria-hidden="true">
+        <svg viewBox="0 0 18 18" fill="none">
+          <path d="M4 9H14" stroke-width="1.6" stroke-linecap="round" />
+          <path d="M10 5L14 9L10 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+    </a>
+  </div>
+
+  <div class="bento">
+    <div class="bento__col">
+      <article class="card card--material">
+        <span class="card__badge">01</span>
+        <div class="card__media">
+          <img src="assets/card-material.jpg" alt="" />
+        </div>
+        <div class="card__copy">
+          <h3 class="card__title">Material</h3>
+          <p class="card__text">Real glass with physical thickness, not&nbsp;painted plastic. Chrome runs in&nbsp;front of&nbsp;it, behind it&nbsp;and&nbsp;between its&nbsp;layers.</p>
+        </div>
+      </article>
+
+      <article class="card card--anatomy">
+        <img class="card__bg" src="assets/card-anatomy.jpg" alt="" />
+        <span class="card__badge card__badge--on-image">03</span>
+        <div class="card__copy">
+          <h3 class="card__title card__title--on-image">Anatomy</h3>
+          <p class="card__text card__text--on-image">The&nbsp;exoskeleton carries the&nbsp;load and&nbsp;the&nbsp;soft inner band spreads it,&nbsp;so&nbsp;the&nbsp;weight stops registering after a&nbsp;minute.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="bento__col bento__col--split">
+      <article class="card card--form">
+        <span class="card__badge">02</span>
+        <div class="card__media">
+          <img src="assets/card-form.jpg" alt="" />
+        </div>
+        <div class="card__copy">
+          <h3 class="card__title">Form</h3>
+          <p class="card__text">An&nbsp;asymmetric biomorphic sculpture. No&nbsp;two silhouettes in&nbsp;the&nbsp;run read exactly the&nbsp;same from the&nbsp;side.</p>
+        </div>
+      </article>
+
+      <div class="bento__row">
+        <article class="card card--sound">
+          <span class="card__badge">04</span>
+          <div class="card__media">
+            <img src="assets/card-sound.jpg" alt="" />
+          </div>
+          <div class="card__copy">
+            <h3 class="card__title">Sound</h3>
+            <p class="card__text">The&nbsp;glass shell doubles as&nbsp;the&nbsp;acoustic chamber — part of&nbsp;the&nbsp;tuning, not&nbsp;a&nbsp;decorative case around it.</p>
+          </div>
+        </article>
+
+        <article class="card card--image">
+          <div class="card__media card__media--fill">
+            <img src="assets/card-image.jpg" alt="" />
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="preorder" id="preorder">
+  <div class="preorder__block">
+    <h2 class="preorder__heading">
+      <span>Reserve the</span>
+      <span>First run</span>
+    </h2>
+    <p class="preorder__text">The&nbsp;first production run is&nbsp;limited and&nbsp;numbered. Leave your details and&nbsp;we&nbsp;will come back to&nbsp;you with the&nbsp;price, the&nbsp;delivery window and&nbsp;your number in&nbsp;the&nbsp;queue.</p>
+
+    <form class="preorder__form" onsubmit="return false">
+      <div class="preorder__row">
+        <input class="field" type="text" placeholder="Name" required />
+        <input class="field" type="email" placeholder="E-mail" required />
+      </div>
+      <textarea class="field field--area" placeholder="Message (optional)"></textarea>
+      <label class="consent">
+        <input class="consent__box" type="checkbox" required />
+        <span>I&nbsp;agree to&nbsp;the&nbsp;processing of&nbsp;my&nbsp;personal data</span>
+      </label>
+      <button class="btn" type="submit">
+        <span class="btn__label">Reserve</span>
+        <span class="btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none">
+            <path d="M4 9H14" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M10 5L14 9L10 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <p class="footer__logo">lilium.</p>
+      <p class="footer__tagline">Wearable audio armor</p>
+    </div>
+
+    <div class="footer__col">
+      <p class="footer__col-title">Product</p>
+      <a href="#">Overview</a>
+      <a href="#">Material</a>
+      <a href="#">Sound</a>
+      <a href="#">Specifications</a>
+    </div>
+
+    <div class="footer__col">
+      <p class="footer__col-title">Company</p>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Press</a>
+    </div>
+
+    <div class="footer__col">
+      <p class="footer__col-title">Connect</p>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">E-mail</a>
+    </div>
+  </div>
+
+  <div class="footer__divider"></div>
+
+  <div class="footer__bottom">
+    <p>© 2026 LILIUM</p>
+    <a href="#">Privacy policy</a>
+  </div>
+</footer>
+
+<script>
+  var cards = document.querySelectorAll('.card');
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -120px 0px' });
+  cards.forEach(function (card) { revealObserver.observe(card); });
+</script>
+
+</body>
+</html>
