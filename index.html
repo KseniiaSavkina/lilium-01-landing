@@ -255,6 +255,23 @@
     });
   }, { threshold: 0.2, rootMargin: '0px 0px -120px 0px' });
   cards.forEach(function (card) { revealObserver.observe(card); });
+
+  var maxTilt = 8;
+  cards.forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var px = (e.clientX - rect.left) / rect.width;
+      var py = (e.clientY - rect.top) / rect.height;
+      card.style.setProperty('--tilt-x', ((0.5 - py) * maxTilt * 2).toFixed(2) + 'deg');
+      card.style.setProperty('--tilt-y', ((px - 0.5) * maxTilt * 2).toFixed(2) + 'deg');
+      card.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+      card.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+    });
+    card.addEventListener('mouseleave', function () {
+      card.style.setProperty('--tilt-x', '0deg');
+      card.style.setProperty('--tilt-y', '0deg');
+    });
+  });
 </script>
 
 </body>

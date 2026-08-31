@@ -509,7 +509,27 @@ button {
   border-radius: var(--r-card);
   overflow: hidden;
   opacity: 0.4;
-  transition: opacity 1.6s ease-out;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --mx: 50%;
+  --my: 50%;
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition: opacity 1.6s ease-out, transform 0.15s ease-out;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(circle at var(--mx) var(--my), var(--bloom-18), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  opacity: 1;
 }
 
 .card.in-view {
@@ -521,7 +541,7 @@ button {
 .card--sound {
   background: var(--surface);
   border: var(--hairline) solid var(--bloom-10);
-  transition: opacity 1.6s ease-out, border-color 0.4s ease;
+  transition: opacity 1.6s ease-out, transform 0.15s ease-out, border-color 0.4s ease;
 }
 
 .card--material:hover,
@@ -553,6 +573,7 @@ button {
 }
 
 .card--form {
+  height: 396px;
   min-height: 0;
 }
 
@@ -562,6 +583,7 @@ button {
 
 .card--sound,
 .card--image {
+  height: 396px;
   min-width: 0;
 }
 
@@ -645,6 +667,31 @@ button {
   letter-spacing: var(--text-tracking);
 }
 
+.card--material .card__copy,
+.card--form .card__copy,
+.card--sound .card__copy {
+  gap: 0;
+}
+
+.card--material .card__media,
+.card--form .card__media {
+  flex: none;
+  height: 206px;
+  transition: height 0.5s ease;
+}
+
+.card--sound .card__media {
+  flex: none;
+  height: 161.5px;
+  transition: height 0.5s ease;
+}
+
+.card--material .card__text,
+.card--form .card__text,
+.card--sound .card__text {
+  margin-top: 10px;
+}
+
 .card__title {
   margin: 0;
   color: var(--bloom);
@@ -654,6 +701,60 @@ button {
 .card__text {
   margin: 0;
   color: var(--bloom-66);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card__text {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 0.08s;
+  }
+
+  .card:hover .card__text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* material / form / sound: photo is enlarged at rest, folds down to make
+     room for the description on hover */
+  .card--material .card__media,
+  .card--form .card__media {
+    height: 256px;
+  }
+
+  .card--material:hover .card__media,
+  .card--form:hover .card__media {
+    height: 206px;
+  }
+
+  .card--sound .card__media {
+    height: 251.5px;
+  }
+
+  .card--sound:hover .card__media {
+    height: 161.5px;
+  }
+
+  .card--material .card__text,
+  .card--form .card__text,
+  .card--sound .card__text {
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, margin-top 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .card--material:hover .card__text,
+  .card--form:hover .card__text {
+    max-height: 40px;
+    margin-top: 10px;
+  }
+
+  .card--sound:hover .card__text {
+    max-height: 82px;
+    margin-top: 10px;
+  }
 }
 
 .card__title--on-image,
