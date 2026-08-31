@@ -133,6 +133,7 @@ button {
 
 .hero {
   background: var(--ink);
+  height: 100vh;
   height: 100svh;
   padding: var(--panel-inset);
 }
@@ -140,6 +141,7 @@ button {
 .hero__panel {
   position: relative;
   width: 100%;
+  height: calc(100vh - (var(--panel-inset) * 2));
   height: calc(100svh - (var(--panel-inset) * 2));
   border-radius: var(--r-panel);
   overflow: hidden;
@@ -424,7 +426,7 @@ button {
 .manifesto__fragment--large {
   width: 365px;
   height: 336px;
-  top: 124px;
+  top: 150px;
   right: -100px;
   z-index: 1;
 }
@@ -1162,5 +1164,26 @@ button {
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
+  }
+
+  /* narrower side gutter so cards and text have more room to breathe */
+  .manifesto {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .features {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .preorder {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .footer {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
