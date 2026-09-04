@@ -19,7 +19,16 @@
     <div class="hero__scrim hero__scrim--bottom" aria-hidden="true"></div>
 
     <div class="hero__topbar">
-      <span class="hero__wordmark-nav">LILIUM®</span>
+      <div class="hero__topbar-row">
+        <span class="hero__wordmark-nav">LILIUM®</span>
+
+        <button class="hero__menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg viewBox="0 0 18 18" fill="none">
+            <path d="M3 5.5H15" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M3 12.5H15" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
 
       <nav class="segmented" aria-label="Primary">
         <a class="segmented__item is-active" href="#hero">Home</a>
@@ -31,7 +40,7 @@
         <a class="segmented__item" href="#preorder">Preorder</a>
       </nav>
 
-      <a class="btn" href="#preorder">
+      <a class="btn hero__reserve-btn" href="#preorder">
         <span class="btn__label">Reserve yours</span>
         <span class="btn__icon" aria-hidden="true">
           <svg viewBox="0 0 18 18" fill="none">
@@ -40,17 +49,35 @@
           </svg>
         </span>
       </a>
+
     </div>
 
-    <div class="hero__hairline" aria-hidden="true"></div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Primary mobile">
+      <a href="#hero">Home</a>
+      <a href="#manifesto">Manifesto</a>
+      <a href="#features">Features</a>
+      <a href="#preorder">Preorder</a>
+    </nav>
+
+    <div class="hero__hairline hero__hairline--left" aria-hidden="true"></div>
+    <div class="hero__hairline hero__hairline--right" aria-hidden="true"></div>
 
     <div class="hero__body">
       <p class="hero__lede">Glass around the&nbsp;ear, chrome around the&nbsp;glass. Over-ear headphones built like an&nbsp;object, not&nbsp;a&nbsp;gadget.</p>
+      <a class="btn hero__reserve-btn--mobile" href="#preorder">
+        <span class="btn__label">Reserve yours</span>
+        <span class="btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none">
+            <path d="M4 9H14" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M10 5L14 9L10 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </a>
       <ul class="hero__list">
-        <li>Material</li>
-        <li>Form</li>
-        <li>Anatomy</li>
-        <li>Sound</li>
+        <li><a href="#card-material">Material</a></li>
+        <li><a href="#card-form">Form</a></li>
+        <li><a href="#card-anatomy">Anatomy</a></li>
+        <li><a href="#card-sound">Sound</a></li>
       </ul>
     </div>
 
@@ -65,7 +92,6 @@
           <span class="is-active"></span>
           <span></span>
           <span></span>
-          <span></span>
         </div>
       </div>
     </div>
@@ -73,31 +99,47 @@
 </header>
 
 <section class="manifesto" id="manifesto">
-  <div class="manifesto__row">
-    <div class="manifesto__copy">
-      <h2 class="manifesto__heading">Manifesto</h2>
-      <p class="manifesto__statement">Glass is&nbsp;softness. Chrome is&nbsp;protection.</p>
-      <p class="manifesto__text">LILIUM 01 is&nbsp;not&nbsp;a&nbsp;gadget wearing a&nbsp;decorative shell. The&nbsp;glass carries the&nbsp;sound, the&nbsp;chrome carries the&nbsp;load, and&nbsp;the&nbsp;two are locked into one another — the&nbsp;way armour is&nbsp;built around something worth keeping.</p>
-      <a class="manifesto__link" href="#features">More</a>
-    </div>
+  <a class="btn" href="#preorder">
+    <span class="btn__label">Reserve yours</span>
+    <span class="btn__icon" aria-hidden="true">
+      <svg viewBox="0 0 18 18" fill="none">
+        <path d="M4 9H14" stroke-width="1.6" stroke-linecap="round" />
+        <path d="M10 5L14 9L10 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </span>
+  </a>
 
-    <div class="manifesto__stats">
-      <div class="stat">
-        <p class="stat__value">40 mm</p>
-        <p class="stat__label">Driver</p>
-      </div>
-      <div class="stat">
-        <p class="stat__value">280 g</p>
-        <p class="stat__label">Weight</p>
-      </div>
-      <div class="stat">
-        <p class="stat__value">60 h</p>
-        <p class="stat__label">Battery</p>
-      </div>
-    </div>
+  <p class="manifesto__statement">Glass is&nbsp;softness. Chrome is&nbsp;protection.</p>
 
-    <img class="manifesto__fragment manifesto__fragment--small" src="assets/fragment-small.png" alt="" aria-hidden="true" />
-    <img class="manifesto__fragment manifesto__fragment--large" src="assets/fragment-large.png" alt="" />
+  <p class="manifesto__text">Nothing here is&nbsp;decorative. The&nbsp;glass carries the&nbsp;sound, the&nbsp;chrome carries the&nbsp;load, and&nbsp;the&nbsp;two are locked into one another.</p>
+
+  <div class="manifesto__stats">
+    <div class="stat">
+      <p class="stat__value">40 mm</p>
+      <p class="stat__label">Driver</p>
+    </div>
+    <div class="stat">
+      <p class="stat__value">280 g</p>
+      <p class="stat__label">Weight</p>
+    </div>
+    <div class="stat">
+      <p class="stat__value">60 h</p>
+      <p class="stat__label">Battery</p>
+    </div>
+  </div>
+
+  <div class="manifesto__diagram">
+    <img src="assets/diagram.jpg" alt="LILIUM 01 headphone anatomy" />
+
+    <svg class="manifesto__leader manifesto__leader--1" viewBox="0 0 352.032 14.999" fill="none" aria-hidden="true"><path d="M0 0.5H136L352 14.5" stroke="currentColor" /></svg>
+    <svg class="manifesto__leader manifesto__leader--2" viewBox="0 0 180.314 76.8888" fill="none" aria-hidden="true"><path d="M180.314 0.5H94.3144L0.314361 76.5" stroke="currentColor" /></svg>
+    <svg class="manifesto__leader manifesto__leader--3" viewBox="0 0 252.263 94.9253" fill="none" aria-hidden="true"><path d="M0 94.4253H100L252 0.425252" stroke="currentColor" /></svg>
+    <svg class="manifesto__leader manifesto__leader--4" viewBox="0 0 218.232 68.943" fill="none" aria-hidden="true"><path d="M218.232 68.443H130.232L0.231749 0.443049" stroke="currentColor" /></svg>
+
+    <p class="manifesto__label manifesto__label--exo">Chrome exoskeleton</p>
+    <p class="manifesto__label manifesto__label--glass">Glass shell</p>
+    <p class="manifesto__label manifesto__label--cushion">Ear cushion</p>
+    <p class="manifesto__label manifesto__label--core">Acoustic core</p>
   </div>
 </section>
 
@@ -120,7 +162,7 @@
 
   <div class="bento">
     <div class="bento__col">
-      <article class="card card--material">
+      <article class="card card--material" id="card-material">
         <span class="card__badge">01</span>
         <div class="card__media">
           <img src="assets/card-material.jpg" alt="" />
@@ -131,7 +173,7 @@
         </div>
       </article>
 
-      <article class="card card--anatomy">
+      <article class="card card--anatomy" id="card-anatomy">
         <img class="card__bg" src="assets/card-anatomy.jpg" alt="" />
         <span class="card__badge card__badge--on-image">03</span>
         <div class="card__copy">
@@ -142,7 +184,7 @@
     </div>
 
     <div class="bento__col bento__col--split">
-      <article class="card card--form">
+      <article class="card card--form" id="card-form">
         <span class="card__badge">02</span>
         <div class="card__media">
           <img src="assets/card-form.jpg" alt="" />
@@ -154,7 +196,7 @@
       </article>
 
       <div class="bento__row">
-        <article class="card card--sound">
+        <article class="card card--sound" id="card-sound">
           <span class="card__badge">04</span>
           <div class="card__media">
             <img src="assets/card-sound.jpg" alt="" />
@@ -245,7 +287,23 @@
 </footer>
 
 <script>
+  var menuBtn = document.querySelector('.hero__menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function () {
+      var isOpen = mobileMenu.classList.toggle('is-open');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('is-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   var cards = document.querySelectorAll('.card');
+  var diagramAnnotations = document.querySelectorAll('.manifesto__label, .manifesto__leader');
   var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -255,6 +313,7 @@
     });
   }, { threshold: 0.2, rootMargin: '0px 0px -120px 0px' });
   cards.forEach(function (card) { revealObserver.observe(card); });
+  diagramAnnotations.forEach(function (el) { revealObserver.observe(el); });
 
   var maxTilt = 8;
   cards.forEach(function (card) {
@@ -272,6 +331,62 @@
       card.style.setProperty('--tilt-y', '0deg');
     });
   });
+
+  var diagram = document.querySelector('.manifesto__diagram');
+  if (diagram) {
+    var parallaxRange = 0.07; // fraction of the diagram's own height it may travel
+
+    var diagramMaxTilt = 9;
+    diagram.addEventListener('mousemove', function (e) {
+      var rect = diagram.getBoundingClientRect();
+      var px = (e.clientX - rect.left) / rect.width;
+      var py = (e.clientY - rect.top) / rect.height;
+      diagram.style.setProperty('--tilt-x', ((0.5 - py) * diagramMaxTilt * 2).toFixed(2) + 'deg');
+      diagram.style.setProperty('--tilt-y', ((px - 0.5) * diagramMaxTilt * 2).toFixed(2) + 'deg');
+    });
+    diagram.addEventListener('mouseleave', function () {
+      diagram.style.setProperty('--tilt-x', '0deg');
+      diagram.style.setProperty('--tilt-y', '0deg');
+    });
+
+    var parallaxTicking = false;
+    var updateParallax = function () {
+      parallaxTicking = false;
+      var rect = diagram.getBoundingClientRect();
+      var viewportH = window.innerHeight;
+      var center = rect.top + rect.height / 2 - viewportH / 2;
+      var progress = center / (viewportH / 2 + rect.height / 2);
+      progress = Math.max(-1, Math.min(1, progress));
+      diagram.style.setProperty('--parallax-y', (-progress * parallaxRange * rect.height).toFixed(1) + 'px');
+    };
+    var onScroll = function () {
+      if (!parallaxTicking) {
+        parallaxTicking = true;
+        requestAnimationFrame(updateParallax);
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    updateParallax();
+  }
+
+  var thumbImg = document.querySelector('.hero__thumb img');
+  var thumbDots = document.querySelectorAll('.hero__segments span');
+  if (thumbImg && thumbDots.length) {
+    var thumbImages = ['assets/thumb.jpg', 'assets/card-material.jpg', 'assets/card-sound.jpg'];
+    var thumbIndex = 0;
+    setInterval(function () {
+      thumbIndex = (thumbIndex + 1) % thumbImages.length;
+      thumbImg.style.opacity = '0';
+      setTimeout(function () {
+        thumbImg.src = thumbImages[thumbIndex];
+        thumbImg.style.opacity = '1';
+      }, 400);
+      thumbDots.forEach(function (dot, i) {
+        dot.classList.toggle('is-active', i === thumbIndex);
+      });
+    }, 3200);
+  }
 </script>
 
 </body>

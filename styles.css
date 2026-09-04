@@ -65,7 +65,7 @@ button {
   align-items: center;
   gap: 16px;
   height: var(--control-h);
-  padding: 6px 6px 6px 28px;
+  padding: 4px 4px 4px 28px;
   border-radius: var(--r-control);
   background: var(--bloom);
   color: var(--ink);
@@ -122,6 +122,12 @@ button {
 
 .segmented__item.is-active {
   background: var(--bloom-12);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .segmented__item:hover {
+    background: var(--bloom-12);
+  }
 }
 
 .segmented__divider {
@@ -185,6 +191,7 @@ button {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  margin-top: -12px;
 }
 
 .hero__wordmark-nav {
@@ -205,14 +212,38 @@ button {
   justify-self: end;
 }
 
+.hero__topbar-row {
+  display: contents;
+}
+
+.hero__menu-btn {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.hero__reserve-btn--mobile {
+  display: none;
+}
+
 .hero__hairline {
   position: absolute;
   z-index: 2;
-  left: 38px;
-  right: 38px;
   top: 90px;
   height: var(--hairline);
   background: var(--bloom-18);
+}
+
+.hero__hairline--left {
+  left: 38px;
+  right: calc(50% + 212.5px);
+}
+
+.hero__hairline--right {
+  left: calc(50% + 212.5px);
+  right: 38px;
 }
 
 .hero__body {
@@ -242,13 +273,21 @@ button {
   text-align: right;
 }
 
-.hero__list li {
+.hero__list a {
   font-family: var(--font-text);
   font-size: var(--text-size);
   line-height: var(--text-leading);
   text-transform: var(--text-case);
   letter-spacing: var(--text-tracking);
   color: var(--bloom);
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero__list a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 }
 
 .hero__foot {
@@ -264,6 +303,7 @@ button {
   display: flex;
   align-items: flex-end;
   gap: 12px;
+  margin-left: -6.48px;
   font-family: var(--font-display);
   font-size: min(var(--wordmark-size), 22vw);
   line-height: var(--wordmark-leading);
@@ -300,15 +340,17 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity .4s ease;
 }
 
 .hero__segments {
   display: flex;
+  width: 100%;
   gap: 5px;
 }
 
 .hero__segments span {
-  width: 38px;
+  flex: 1;
   height: 2px;
   border-radius: var(--r-control);
   background: var(--bloom-18);
@@ -322,31 +364,18 @@ button {
 
 .manifesto {
   position: relative;
-  overflow: hidden;
   background: var(--ink);
-  padding: 160px 100px;
+  padding: 140px 100px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
-}
-
-.manifesto__row {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.manifesto__copy {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 28px;
-  width: 560px;
 }
 
-.manifesto__heading {
+.manifesto__statement {
   margin: 0;
+  max-width: 900px;
+  text-align: center;
   font-family: var(--font-heading);
   font-weight: 300;
   font-size: var(--h2);
@@ -355,45 +384,30 @@ button {
   color: var(--bloom);
 }
 
-.manifesto__statement {
-  font-family: var(--font-heading);
-  font-weight: 400;
-  font-size: var(--h5);
-  line-height: var(--heading-leading);
-  letter-spacing: 0;
-  color: var(--bloom-76);
-  width: 520px;
-}
-
 .manifesto__text {
+  margin: 0;
+  max-width: 620px;
+  text-align: center;
   font-family: var(--font-text);
   font-size: var(--text-size);
   line-height: var(--text-leading);
   text-transform: var(--text-case);
   letter-spacing: var(--text-tracking);
   color: var(--bloom-66);
-  width: 480px;
-}
-
-.manifesto__link {
-  font-family: var(--font-text);
-  font-size: var(--text-size);
-  line-height: var(--text-leading);
-  text-transform: var(--text-case);
-  letter-spacing: var(--text-tracking);
-  color: var(--bloom);
 }
 
 .manifesto__stats {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 72px;
-  padding-top: 60px;
+  padding-top: 8px;
 }
 
 .stat {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 6px;
 }
 
@@ -417,33 +431,96 @@ button {
   white-space: nowrap;
 }
 
-.manifesto__fragment {
+.manifesto__diagram {
+  position: relative;
+  z-index: 0;
+  width: var(--content);
+  max-width: 100%;
+  aspect-ratio: 1100 / 614;
+  --parallax-y: 0px;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+}
+
+.manifesto__diagram img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(var(--parallax-y)) perspective(1400px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition: transform 0.2s ease-out;
+}
+
+.manifesto__label {
   position: absolute;
-  object-fit: contain;
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: var(--text-size);
+  line-height: var(--text-leading);
+  text-transform: var(--text-case);
+  letter-spacing: var(--text-tracking);
+  color: var(--bloom-76);
+  white-space: nowrap;
+}
+
+.manifesto__label--exo {
+  left: 2.73%;
+  top: 19.22%;
+}
+
+.manifesto__label--glass {
+  left: 88.82%;
+  top: 24.43%;
+}
+
+.manifesto__label--cushion {
+  left: 2.73%;
+  top: 76.55%;
+}
+
+.manifesto__label--core {
+  left: 87.27%;
+  top: 74.92%;
+}
+
+.manifesto__leader {
+  position: absolute;
+  color: var(--bloom-46);
   pointer-events: none;
 }
 
-.manifesto__fragment--large {
-  width: 365px;
-  height: 336px;
-  top: 150px;
-  right: -100px;
-  z-index: 1;
+.manifesto__leader--1 {
+  left: 19.45%;
+  top: 20.85%;
+  width: 32%;
+  height: 2.44%;
 }
 
-.manifesto__fragment--small {
-  width: 210px;
-  height: 158px;
-  top: 192px;
-  left: 629px;
-  z-index: 2;
+.manifesto__leader--2 {
+  left: 64.18%;
+  top: 26.06%;
+  width: 16.39%;
+  height: 12.52%;
+}
+
+.manifesto__leader--3 {
+  left: 18.18%;
+  top: 62.87%;
+  width: 22.93%;
+  height: 15.46%;
+}
+
+.manifesto__leader--4 {
+  left: 60.18%;
+  top: 65.47%;
+  width: 19.84%;
+  height: 11.23%;
 }
 
 /* ---- 03 · features ---- */
 
 .features {
   background: var(--ink);
-  padding: 140px 100px 160px;
+  padding: 140px 100px;
   display: flex;
   flex-direction: column;
   gap: 56px;
@@ -777,7 +854,7 @@ button {
 
 .preorder {
   background: var(--ink);
-  padding: 160px 100px 180px;
+  padding: 140px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -848,6 +925,11 @@ button {
   min-width: 0;
 }
 
+.field:focus {
+  background: var(--bloom-12);
+  outline: none;
+}
+
 .field::placeholder {
   color: var(--bloom-66);
   font-family: var(--font-text);
@@ -900,13 +982,13 @@ button {
 .consent__box:checked::after {
   content: "";
   position: absolute;
-  left: 5px;
-  top: 2px;
-  width: 4px;
-  height: 8px;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 10px;
   border: solid var(--ink);
-  border-width: 0 1.6px 1.6px 0;
-  transform: rotate(45deg);
+  border-width: 0 1.8px 1.8px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 /* ---- 05 · footer ---- */
@@ -1008,23 +1090,6 @@ button {
     max-width: 300px;
   }
 
-  .manifesto__row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
-  }
-
-  .manifesto__copy,
-  .manifesto__statement,
-  .manifesto__text {
-    width: auto;
-    max-width: 560px;
-  }
-
-  .manifesto__fragment {
-    display: none;
-  }
-
   .features__head {
     grid-template-columns: 1fr;
     justify-items: start;
@@ -1057,11 +1122,12 @@ button {
 
   .card--material {
     order: 1;
+    height: auto;
   }
 
   .card--form {
     order: 2;
-    height: 396px;
+    height: auto;
   }
 
   .card--anatomy {
@@ -1075,7 +1141,7 @@ button {
 
   .card--sound {
     order: 4;
-    height: 396px;
+    height: auto;
     flex: none;
   }
 
@@ -1121,21 +1187,82 @@ button {
   }
 
   .hero__topbar {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    row-gap: 16px;
+    display: block;
   }
 
-  .hero__wordmark-nav,
+  .hero__topbar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .hero__topbar .segmented,
-  .hero__topbar .btn {
-    justify-self: center;
+  .hero__topbar .hero__reserve-btn {
+    display: none;
   }
 
-  .hero__topbar .segmented {
-    min-width: 0;
-    max-width: 100%;
-    overflow-x: auto;
+  .hero__menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: var(--icon-box);
+    height: var(--icon-box);
+    border-radius: var(--r-control);
+    border: var(--hairline) solid var(--bloom-18);
+    background: transparent;
+    color: var(--bloom);
+  }
+
+  .hero__menu-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 38px;
+    right: 38px;
+    top: 90px;
+    padding: 8px;
+    gap: 2px;
+    background: var(--surface);
+    border: var(--hairline) solid var(--bloom-18);
+    border-radius: var(--r-field);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 10;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-menu a {
+    padding: 12px 14px;
+    border-radius: var(--r-control);
+    font-family: var(--font-text);
+    font-size: var(--text-size);
+    line-height: var(--text-leading);
+    text-transform: var(--text-case);
+    letter-spacing: var(--text-tracking);
+    color: var(--bloom-76);
+  }
+
+  .mobile-menu a.is-active {
+    background: var(--bloom-12);
+    color: var(--bloom);
+  }
+
+  .hero__reserve-btn--mobile {
+    display: inline-flex;
   }
 
   .hero__hairline {
@@ -1160,8 +1287,49 @@ button {
   }
 
   .manifesto__stats {
-    flex-wrap: wrap;
-    row-gap: 24px;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .stat__value {
+    font-size: var(--h5);
+  }
+
+  .manifesto__diagram {
+    width: calc(100% + 48px);
+    max-width: none;
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+
+  .manifesto__label {
+    font-size: 11px;
+    line-height: 14px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .manifesto__label.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .manifesto__label--glass,
+  .manifesto__label--core {
+    left: auto;
+    right: 2.73%;
+    text-align: right;
+  }
+
+  .manifesto__leader {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .manifesto__leader.in-view {
+    opacity: 1;
   }
 
   .preorder__row {
