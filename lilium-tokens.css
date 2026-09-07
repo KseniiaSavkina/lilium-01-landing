@@ -46,7 +46,8 @@
   --wordmark-tracking: -4.8px;
 
   /* ---- radius ladder ---- */
-  --r-control:      4px;    /* buttons, segments, badges, checkbox, icon box */
+  --r-control:      4px;    /* segments, badges, checkbox, icon box */
+  --r-button:       6px;    /* buttons (.btn) */
   --r-field:        8px;    /* inputs, media inside cards */
   --r-card:         12px;   /* cards, hero thumbnail */
   --r-panel:        20px;   /* hero panel */
