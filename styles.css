@@ -174,15 +174,15 @@ button {
 }
 
 .hero__scrim--top {
-  top: 0;
-  height: 30%;
-  background: linear-gradient(to bottom, var(--ink) 0%, transparent 100%);
+  top: -1px;
+  height: calc(30% + 1px);
+  background: linear-gradient(to bottom, var(--ink) 0%, var(--ink) 4%, transparent 100%);
 }
 
 .hero__scrim--bottom {
-  bottom: 0;
-  height: 46%;
-  background: linear-gradient(to top, var(--ink) 0%, transparent 100%);
+  bottom: -1px;
+  height: calc(46% + 1px);
+  background: linear-gradient(to top, var(--ink) 0%, var(--ink) 4%, transparent 100%);
 }
 
 .hero__topbar {
