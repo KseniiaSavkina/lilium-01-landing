@@ -28,7 +28,7 @@
   /* headings — Inter, 120% leading, zero tracking */
   --h1:             60px;
   --h2:             44px;
-  --h3:             40px;   /* spec figures */
+  --h3:             30px;   /* spec figures */
   --h4:             28px;   /* footer wordmark */
   --h5:             22px;   /* manifesto statement */
   --h6:             20px;   /* hero wordmark in the nav */

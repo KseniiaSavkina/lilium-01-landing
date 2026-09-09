@@ -1293,7 +1293,7 @@ button {
   }
 
   .stat__value {
-    font-size: var(--h5);
+    font-size: 17px;
   }
 
   .manifesto__diagram {
